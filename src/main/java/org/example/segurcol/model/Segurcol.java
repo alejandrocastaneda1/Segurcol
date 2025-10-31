@@ -3,11 +3,15 @@ package org.example.segurcol.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Segurcol {
+public class Segurcol implements IFuncionalidades {
+
     private String nit;
     ArrayList<Empleado> listEmpleados;
     ArrayList<Servicio> listServicios;
     ArrayList<Equipo> listEquipos;
+    private List<RegistroNovedad> listaNovedades = new ArrayList<>();
+    private List<Agenda> listaAgenda = new ArrayList<>();
+
 
     public Segurcol(String nit) {
         this.nit = nit;
@@ -45,6 +49,47 @@ public class Segurcol {
         this.listEquipos = listEquipos;
     }
 
+    public List<RegistroNovedad> getListaNovedades() {
+        return listaNovedades;
+    }
+    public void setListaNovedades(List<RegistroNovedad> listaNovedades) {
+        this.listaNovedades = listaNovedades;
+    }
 
+    public List<Agenda> getListaAgenda() {
+        return listaAgenda;
+    }
+    public void setListaAgenda(List<Agenda> listaAgenda) {
+        this.listaAgenda = listaAgenda;
+    }
+    @Override
+    public void registrarEmpleado() {
+
+    }
+
+    @Override
+    public void asignarPersonal() {
+
+    }
+
+    @Override
+    public void asignarEquipo() {
+
+    }
+
+    @Override
+    public void calcularCostoTotalServicios() {
+
+    }
+
+    @Override
+    public void generarReporte() {
+
+    }
+
+    @Override
+    public void calcularGastoTotal() {
+
+    }
 
 }
