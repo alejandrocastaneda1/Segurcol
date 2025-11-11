@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.segurcol.viewcontroller.Empleadoviewcontroller"
+            prefWidth="800" prefHeight="600"
+            style="-fx-background-color: linear-gradient(to bottom, #1e293b, #0f172a);">
+
+    <VBox alignment="CENTER" spacing="15" layoutX="100" layoutY="40" prefWidth="600">
+        <!-- 🔹 Título -->
+        <Label text="👷 GESTIÓN DE EMPLEADOS"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+        <!-- 🔹 Formulario -->
+        <GridPane hgap="12" vgap="12" alignment="CENTER">
+            <Label text="Nombre:" style="-fx-text-fill: white;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtNombre" promptText="Ej: Juan Pérez"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Documento:" style="-fx-text-fill: white;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtDocumento" promptText="Ej: 123456789"
+                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Turno:" style="-fx-text-fill: white;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtTurno" promptText="Ej: Diurno / Nocturno"
+                       GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Salario Base:" style="-fx-text-fill: white;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtSalario" promptText="Ej: 1500000"
+                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Tipo de empleado:" style="-fx-text-fill: white;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbTipoEmpleado" prefWidth="200"
+                      GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label fx:id="lblDatoExtra" text="Dato extra:" style="-fx-text-fill: white;"
+                   GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtDatoExtra" promptText="Ej: Bono o Zonas"
+                       GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <!-- 🔹 Botones -->
+        <HBox alignment="CENTER" spacing="15">
+            <Button text="Agregar" onAction="#agregarEmpleado"
+                    style="-fx-background-color: #22c55e; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8;"/>
+            <Button text="Eliminar" onAction="#eliminarEmpleado"
+                    style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8;"/>
+            <Button text="Volver al inicio" onAction="#volverAlInicio"
+                    style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8;"/>
+        </HBox>
+
+        <!-- 🔹 Tabla -->
+        <TableView fx:id="tablaEmpleados" prefWidth="600" prefHeight="300">
+            <columns>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="120"/>
+                <TableColumn fx:id="colDocumento" text="Documento" prefWidth="120"/>
+                <TableColumn fx:id="colTurno" text="Turno" prefWidth="100"/>
+                <TableColumn fx:id="colSalario" text="Salario" prefWidth="100"/>
+                <TableColumn fx:id="colTipo" text="Tipo" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <padding>
+        <Insets top="20"/>
+    </padding>
+</AnchorPane>

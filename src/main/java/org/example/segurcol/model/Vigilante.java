@@ -1,19 +1,25 @@
 package org.example.segurcol.model;
 
 public class Vigilante extends Empleado {
-    private int numeroPuesto;
-    public TipoArma tipoArma;
 
-    public Vigilante(int numeroPuesto, TipoArma tipoArma, double salarioBase, String nombre, String documento, String turnoAsignado) {
+    private int horasExtras;  // o zonaAsignada, si prefieres, depende del significado
+
+    public Vigilante(int horasExtras, String nombre, String documento, String turnoAsignado, double salarioBase) {
         super(nombre, documento, turnoAsignado, salarioBase);
-        this.numeroPuesto = numeroPuesto;
+        this.horasExtras = horasExtras;
     }
 
-    public int getNumeroPuesto() {
-        return numeroPuesto;
-    }
-    public void setNumeroPuesto(int numeroPuesto) {
-        this.numeroPuesto = numeroPuesto;
+    public int getHorasExtras() {
+        return horasExtras;
     }
 
+    public void setHorasExtras(int horasExtras) {
+        this.horasExtras = horasExtras;
+    }
+
+    @Override
+    public double calcularTotal() {
+        // Ejemplo: paga adicional de 10 000 por hora extra
+        return salarioBase + (horasExtras * 10000);
+    }
 }

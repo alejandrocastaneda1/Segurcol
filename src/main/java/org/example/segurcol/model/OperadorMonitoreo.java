@@ -1,17 +1,13 @@
 package org.example.segurcol.model;
 
 public class OperadorMonitoreo extends Empleado {
-
-    // 🔹 Atributo propio
     private int numeroZonas;
 
-    // 🔹 Constructor
-    public OperadorMonitoreo(int numeroZonas,String nombre, int salarioBase,String documento, String turnoAsignado ) {
+    public OperadorMonitoreo(int numeroZonas, String nombre, String documento, String turnoAsignado, double salarioBase) {
         super(nombre, documento, turnoAsignado, salarioBase);
         this.numeroZonas = numeroZonas;
     }
 
-    // 🔹 Getters y Setters
     public int getNumeroZonas() {
         return numeroZonas;
     }
@@ -20,4 +16,8 @@ public class OperadorMonitoreo extends Empleado {
         this.numeroZonas = numeroZonas;
     }
 
+    @Override
+    public double calcularTotal() {
+        return salarioBase + (numeroZonas * 10000); // ejemplo de cálculo
+    }
 }

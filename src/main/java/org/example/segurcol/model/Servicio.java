@@ -80,7 +80,7 @@ public abstract class Servicio {
             Servicio s = servicios.get(i);
             if (s.getCodigoContrato() != null && s.getCodigoContrato().equals(codigo)) {
                 servicios.remove(i);
-                System.out.println("🗑️ Servicio eliminado exitosamente");
+                System.out.println("Servicio eliminado exitosamente");
                 return true;
             }
         }

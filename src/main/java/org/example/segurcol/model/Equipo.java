@@ -59,11 +59,11 @@ public class Equipo implements IObjetivo {
     // CREATE
     public void crear(Equipo equipo) {
         if (obtenerPorCodigo(equipo.getCodigo()) != null) {
-            System.out.println("✗ Error: Ya existe un equipo con el código " + equipo.getCodigo());
+            System.out.println(" Error: Ya existe un equipo con el código " + equipo.getCodigo());
             return;
         }
         equipos.add(equipo);
-        System.out.println("✓ Equipo creado exitosamente");
+        System.out.println(" Equipo creado exitosamente");
     }
 
     // READ - Obtener todos
@@ -93,11 +93,11 @@ public class Equipo implements IObjetivo {
                 e.setTipo(nuevoTipo);
                 e.setEstado(nuevoEstado);
                 e.setValorReposicion(nuevoValor);
-                System.out.println("🔄 Equipo actualizado exitosamente: " + codigo);
+                System.out.println("Equipo actualizado exitosamente: " + codigo);
                 return true;
             }
         }
-        System.out.println("⚠️ No se encontró el equipo con código: " + codigo);
+        System.out.println(" No se encontró el equipo con código: " + codigo);
         return false;
     }
 
@@ -108,11 +108,11 @@ public class Equipo implements IObjetivo {
             Equipo e = equipos.get(i);
             if (e.getCodigo() != null && e.getCodigo().equalsIgnoreCase(codigo)) {
                 equipos.remove(i);
-                System.out.println("🗑️ Equipo eliminado exitosamente: " + codigo);
+                System.out.println(" Equipo eliminado exitosamente: " + codigo);
                 return true;
             }
         }
-        System.out.println("⚠️ No se encontró el equipo con código: " + codigo);
+        System.out.println("️ No se encontró el equipo con código: " + codigo);
         return false;
     }
 
